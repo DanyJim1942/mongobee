@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { SqlinjectorService, Documento } from './sqlinjector.service';
+import { SqlinjectorService, Documento } from './services/sqlinjector.service';
 import { Router } from 'express';
 
 @Component({
@@ -13,15 +13,18 @@ import { Router } from 'express';
 export class AppComponent {
   title = 'abeja';
   documentos!: Documento[];
-  constructor(private SqlinjectorService: SqlinjectorService, private router: Router, private activateRoute: ActivatedRoute){}
+  constructor(private sqlinjector: SqlinjectorService){}
 
-
-  this.SqlinjectorService.obtenerDocumentos().subscribe()(
-    res=>{
-      console.log(res)
-      this.documentos=<any>res;
-    },
-    err=>console.log(err)
-  )
+  ngOnInit(): void{
+    this.obtenerDocumentos();
+  }
+  
+  obtenerDocumentos(){
+    this.sqlinjector.obtenerDocumentos().subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error);
+    })
+  }
   
 }

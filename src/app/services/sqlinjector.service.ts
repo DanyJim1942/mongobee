@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class SqlinjectorService {
 
   constructor(private http: HttpClient) { }
 
-  obtenerDocumentos(){
+  obtenerDocumentos(): Observable<any>{
     return this.http.get("/api/tarjeta");
 
   }
