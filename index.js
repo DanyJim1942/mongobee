@@ -1,11 +1,16 @@
+//CONFIGURACION DE RUTAS PARA EL USO DE LA API
+
 const express = require('express');
 const conectarDB = require('./config/db');
 
 //CREAMOS EL SERVIDOR
 const app = express();
 
+
 //CONECTAMOS A LA DB
 conectarDB();
+
+
 //HABILITAMOS EL USO DE JSON
 app.use(express.json());
 

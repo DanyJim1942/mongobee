@@ -1,3 +1,9 @@
+//CONTROLADORES PARA API DE MONGO
+//ELEMENTO USADO: TARJETA
+//CRUD
+
+//APOYA A ROUTES.TARJETA
+
 const Tarjeta = require("../models/Tarjeta");
 
 exports.creaTarjeta = async (req, res) => {

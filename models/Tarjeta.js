@@ -1,3 +1,5 @@
+//MODELO O INTERFAZ DE DOCUMENTO EN MONGO
+
 const mongoose = require('mongoose');
 
 const TarjetaSchema = mongoose.Schema({

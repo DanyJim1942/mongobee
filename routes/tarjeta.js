@@ -1,3 +1,7 @@
+//ASIGNACION DE LAS RUTAS CON SU RESPECTIVO CONTROLADOR
+
+//AREA EN USO: CONTROLLERS.TARJETACONTROLER
+
 const express = require('express');
 const router = express.Router();
 const tarjetaController = require('../controllers/tarjetaController');
